@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VELOUR &amp; WEAVE - The Art of the Thread</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-on-surface": "#f3f0f0",
+                      "on-secondary-fixed": "#1c1c18",
+                      "on-primary-fixed-variant": "#444749",
+                      "on-tertiary-fixed": "#241a08",
+                      "on-primary-container": "#828587",
+                      "secondary": "#5f5e59",
+                      "on-surface": "#1b1c1c",
+                      "inverse-primary": "#c5c7c9",
+                      "outline-variant": "#c4c7c9",
+                      "secondary-container": "#e5e2db",
+                      "on-background": "#1b1c1c",
+                      "surface-tint": "#5c5f61",
+                      "surface-container-high": "#eae7e7",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#f3e0c3",
+                      "secondary-fixed-dim": "#c9c6c0",
+                      "on-error-container": "#93000a",
+                      "on-primary-fixed": "#191c1e",
+                      "error": "#ba1a1a",
+                      "outline": "#74777a",
+                      "primary-fixed": "#e1e2e5",
+                      "on-surface-variant": "#444749",
+                      "primary-container": "#1a1d1f",
+                      "surface-container-highest": "#e4e2e1",
+                      "on-primary": "#ffffff",
+                      "surface-container": "#f0eded",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed-variant": "#524530",
+                      "surface-bright": "#fcf9f8",
+                      "tertiary": "#040200",
+                      "tertiary-container": "#251b09",
+                      "on-tertiary-container": "#92836a",
+                      "surface-dim": "#dcd9d9",
+                      "secondary-fixed": "#e5e2db",
+                      "on-secondary-container": "#65645f",
+                      "inverse-surface": "#303030",
+                      "background": "#fcf9f8",
+                      "on-tertiary": "#ffffff",
+                      "surface-variant": "#e4e2e1",
+                      "surface-container-low": "#f6f3f2",
+                      "primary-fixed-dim": "#c5c7c9",
+                      "primary": "#010203",
+                      "surface": "#fcf9f8",
+                      "on-error": "#ffffff",
+                      "tertiary-fixed-dim": "#d6c4a8",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed-variant": "#474742"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "64px",
+                      "container-max": "1440px",
+                      "gutter": "32px",
+                      "unit": "8px",
+                      "section-gap": "128px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Bodoni Moda"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Bodoni Moda"
+                      ],
+                      "headline-lg": [
+                              "Bodoni Moda"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Bodoni Moda"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "84px",
+                              {
+                                      "lineHeight": "92px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "38px",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        .product-shadow {
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .ambient-shadow {
+            box-shadow: 0 0 40px rgba(27, 28, 28, 0.05);
+        }
+
+        .image-overlay {
+            background: linear-gradient(to top, rgba(27, 28, 28, 0.3) 0%, rgba(27, 28, 28, 0) 50%);
+        }
+
+        .hover-lift {
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .hover-scale-img img {
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .hover-scale-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Hide scrollbar for slider */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased overflow-x-hidden">
+<!-- Navigation (TopNavBar) -->
+<nav class="fixed w-full top-0 z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/20">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
+<a class="font-display-lg text-headline-md md:text-headline-md text-primary uppercase tracking-tighter shrink-0" href="#">
+                VELOUR &amp; WEAVE
+            </a>
+<div class="hidden md:flex gap-8 items-center flex-1 justify-center">
+<a class="font-body-md text-body-md uppercase tracking-widest text-primary font-bold border-b border-primary pb-1 opacity-70 transition-opacity" href="#">Home</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-300" href="#">Catalog</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-300" href="#">History</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-300" href="#">Testimonials</a>
+</div>
+<div class="hidden md:flex shrink-0">
+<a class="bg-primary text-on-primary px-8 py-4 font-body-md text-body-md hover:bg-tertiary transition-colors duration-300" href="#">
+                    Schedule Meeting
+                </a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" style="font-size: 32px;">menu</span>
+</button>
+</div>
+</nav>
+<!-- Cinematic Hero Section -->
+<header class="relative w-full h-screen min-h-[800px] flex items-center justify-center pt-24">
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full" data-alt="Macro photography of luxurious, draped silk fabric in a warm, neutral tone, creating a landscape of rolling textile hills. The lighting is cinematic, highlighting the sheen and texture of the high-end material, conveying an editorial, minimalist aesthetic suited for a luxury interior design brand." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBSACYpgAggJq2_eiWB9y_WKnJQ8pi-tiZfzvRrLxu-jLy1dNHUuKdS_sshzmhY--rpgiXnMrJ3k2un05qECKFbVJ0AQQWPLdSobBTVtjWOPJQ_USkax8EoxkM5vAAKA9Mv62Qs2JHaIYJFtCoMBsm1SgTZcmXd8kA1T6c9WNXhM7LWhdz6KLWk_qaKMaG2w2O1IKhqprGHoMkf0UBBKTdrQeRYDgYwJ1pHftdBsQrXgSDpmm7syxoROg')"></div>
+<div class="absolute inset-0 bg-primary/20"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop w-full max-w-4xl mx-auto flex flex-col items-center">
+<h1 class="font-display-lg text-display-lg md:text-[120px] text-on-primary mb-8 leading-tight text-shadow-sm">The Art of the Thread</h1>
+<p class="font-body-lg text-body-lg text-on-primary/90 mb-12 max-w-2xl text-shadow-sm">Curating the finest textiles for the world's most discerning interior spaces. A heritage of craftsmanship, a future of uncompromised luxury.</p>
+<a class="bg-primary text-on-primary px-10 py-5 font-body-md text-body-md tracking-wide hover:bg-surface-tint hover:text-on-primary transition-all duration-300 flex items-center gap-3" href="#">
+                Schedule a Private Consultation
+                <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+</div>
+</header>
+<main>
+<!-- Category Grid -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Large Feature -->
+<div class="md:col-span-8 group hover-scale-img overflow-hidden relative min-h-[500px] bg-surface-container cursor-pointer border border-outline-variant/30 product-shadow">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 w-full h-full" data-alt="Close-up detail of heavy, richly textured luxury upholstery fabric in a sophisticated slate grey. Soft, directional studio lighting reveals the complex weave structure, set against a bright, minimalist background to emphasize material quality." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC98wQ4YFoAGgrmOGoccPRiQ6UTQjA5jjoFjp2sigVwW-aCOrBAD3fos8ps2tGknD_n6Zea4hXK3iSHUwtIC5T4Phi8Sm3GZp5nE9lA-jRfd91sW4k93lOxs59VpSG9lHr3iX-CbEmRNE4zATHTTLm0vIOVJmS2V-KBu_HjVnj4c4pB8yrUTlBbby63w2aO0Taio60ZBgXhVpfM9C_FWMENDSu5MVVIPyBKWl5qTDlTOPmVE9GYQ5I5Zg')"></div>
+<div class="absolute inset-0 image-overlay transition-opacity duration-300 group-hover:opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full flex flex-col justify-end">
+<span class="font-label-caps text-label-caps text-on-primary mb-2 opacity-80 tracking-widest uppercase">Collection 01</span>
+<h2 class="font-headline-lg text-headline-lg text-on-primary">Heavy Upholstery</h2>
+</div>
+</div>
+<!-- Vertical Feature -->
+<div class="md:col-span-4 group hover-scale-img overflow-hidden relative min-h-[500px] bg-surface-container cursor-pointer border border-outline-variant/30 product-shadow">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 w-full h-full" data-alt="Elegant, luminous luxury silk fabric cascading softly. The lighting highlights the subtle sheen and fluid drape of the material in a pristine, bright environment, capturing an editorial, high-end design aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDz45BIWlL5oODidqnFywZ2WRE-0iHpKRt2582aUc2B1Mb_UYcyzuMpfUwcs8Pt_yz3_KhKxE7a1iSuAlbBbv8JxUh9zrwJwsRvM1MK1Mn8jbsWJptQlBZHNS27aHO9Z77OojYtCYjgLgL3RUPWXjb4TbrGl4-ePQqvx-oF7iniEPnCdzYFo1lAgNwfD_zkLxZwTKHsvvPUGhKmS385l2EI6lvjhlXbyqJ4ZabX9tS4RicQ6KjSYNRN5A')"></div>
+<div class="absolute inset-0 image-overlay transition-opacity duration-300 group-hover:opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full flex flex-col justify-end">
+<span class="font-label-caps text-label-caps text-on-primary mb-2 opacity-80 tracking-widest uppercase">Collection 02</span>
+<h2 class="font-headline-md text-headline-md text-on-primary">Luxury Silk</h2>
+</div>
+</div>
+<!-- Square Features -->
+<div class="md:col-span-6 group hover-scale-img overflow-hidden relative min-h-[400px] bg-surface-container cursor-pointer border border-outline-variant/30 product-shadow">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 w-full h-full" data-alt="Tactile, natural sustainable linen fabric with a beautiful, slubby texture. Photographed in natural, diffused daylight on a stark white background to highlight the organic fibers and eco-conscious luxury appeal." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB4Sj4YEnR01qpUInnN8ZNCe2V1QRlrRCKV5anyW1MVD0BXC0CRbl_-whOxwazFZW2hwBTx-lfY9MinyMmp8T0DSgBVFN8seML-xFogP_NJDCDN2IFO6BUyC6gQBEBlF9ZUqBYaJxcygwo86J6Qr9B8jic0UqXZdMoPDTjyuB3Pus9dBu16JJ4yo2emwjZk5fBkra_f9R-41dQ7iB1mrKe2gEEFiCsO1375yQZBzAjQNcyb3N-WjB8aAw')"></div>
+<div class="absolute inset-0 image-overlay transition-opacity duration-300 group-hover:opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full flex flex-col justify-end">
+<span class="font-label-caps text-label-caps text-on-primary mb-2 opacity-80 tracking-widest uppercase">Collection 03</span>
+<h2 class="font-headline-md text-headline-md text-on-primary">Sustainable Linens</h2>
+</div>
+</div>
+<div class="md:col-span-6 group hover-scale-img overflow-hidden relative min-h-[400px] bg-surface-container cursor-pointer border border-outline-variant/30 product-shadow">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 w-full h-full" data-alt="Intricate embroidered jacquard fabric featuring a subtle, modern geometric pattern in deep charcoal and warm ivory. The shot is tightly cropped, using sharp studio lighting to emphasize the raised embroidery technique against a minimalist setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuADVacug88JUnqwaiVu5cEGmo3KJrc5GGV_oaOeqqryb4EJ4sO7x3G3-F_nFEgLrkfsj-EkLF_ZMrqGJXvPLxtu6ZaZ7CO-a0hGeHaKgFI2lle-mZGKi0R4ktE4jDA4Luikr6YgabpN8er0nAWvtNzRbILbA3nCLIxAnK6HSZmQ_MqB6IaxwUHQnx8GpwimVcez2QVVqd-Nz3HOTuxZogbtVrRQ0_OfsUusjkJrXWz9mrdsiZrdBhZwNA')"></div>
+<div class="absolute inset-0 image-overlay transition-opacity duration-300 group-hover:opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full flex flex-col justify-end">
+<span class="font-label-caps text-label-caps text-on-primary mb-2 opacity-80 tracking-widest uppercase">Collection 04</span>
+<h2 class="font-headline-md text-headline-md text-on-primary">Embroidered Jacquards</h2>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Collections Slider -->
+<section class="py-section-gap bg-surface-container-low overflow-hidden">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-16 flex justify-between items-end">
+<div>
+<h2 class="font-display-lg text-headline-lg md:text-display-lg text-primary mb-4">Autumn Heritage</h2>
+<p class="font-body-lg text-body-lg text-secondary max-w-xl">A curated selection of tactile weaves and warm tones, inspired by archival designs and reimagined for contemporary spaces.</p>
+</div>
+<div class="hidden md:flex gap-4">
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors text-primary">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors text-primary">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="flex gap-gutter px-margin-mobile md:px-margin-desktop overflow-x-auto hide-scrollbar pb-12 snap-x" style="padding-right: max(64px, calc((100vw - 1440px) / 2 + 64px));">
+<!-- Slide 1 -->
+<div class="snap-start shrink-0 w-[85vw] md:w-[600px] flex flex-col group cursor-pointer">
+<div class="relative h-[600px] mb-6 overflow-hidden product-shadow">
+<img class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" data-alt="A draped swatch of the 'Russet Velvet' fabric from the Autumn Heritage collection, showing rich, deep brownish-red tones with a plush texture. Lit carefully to show the pile and sheen, set against a clean, bright background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNluZuQ6h_EGSdh3hLoBg6E8xUx1Ea1t-8rNiBp5Q7aacARm1XLPY2FF2s2Qb8hKHeW4wHo2Qc1Eg6N3sfB3Zh7e1O8UHfE_xFNN5lFL19eys-cUtAhb8IVrnYhEGdATK-kwVhYjgtPC87yyvD5SrYBuD6lHX0_2YwHbOd1zn79R5Iy1JHBOqGgAL-DBQ0TNXE7bz3kMerSCqdPWTmucSt21CD5xZnp6-Kse4de8b0fghSZnOxpJb0ow"/>
+</div>
+<span class="font-label-caps text-label-caps text-secondary mb-2 tracking-widest uppercase">Velvet / Heavyweight</span>
+<h3 class="font-headline-md text-headline-md text-primary">Russet Opulence</h3>
+</div>
+<!-- Slide 2 -->
+<div class="snap-start shrink-0 w-[85vw] md:w-[600px] flex flex-col group cursor-pointer">
+<div class="relative h-[600px] mb-6 overflow-hidden product-shadow">
+<img class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" data-alt="A swatch of the 'Oatmeal Boucle' fabric, demonstrating a highly textured, looped yarn surface in warm off-white tones. Photographed from a slightly elevated angle in soft, natural light within a minimalist studio setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYmTl9UhhSrA15fgJGWd7fHpVkgab_aO2WvSdIFxFjX7goxFxpmgjqFEH6s5KGZYde-qj4yuhvGB4ZKwyqOQyBIiRO3Ewkjhdr-FSu9LZLZYKmG9fJsC1tv9Jv0xC70-2sBinsu_PSSr4c0BIvi7a2O7YxgulFIOIv4HEF-8QtHskbVrzH862Oh92Ip1LnefGyQD4OJizj7AgpZcjtRAZUO3iVhWs7TPRISXfqFrj2RgDHx4-1iKP8SA"/>
+</div>
+<span class="font-label-caps text-label-caps text-secondary mb-2 tracking-widest uppercase">Bouclé / Textured</span>
+<h3 class="font-headline-md text-headline-md text-primary">Highland Bouclé</h3>
+</div>
+<!-- Slide 3 -->
+<div class="snap-start shrink-0 w-[85vw] md:w-[600px] flex flex-col group cursor-pointer">
+<div class="relative h-[600px] mb-6 overflow-hidden product-shadow">
+<img class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" data-alt="A folded piece of 'Forest Damask' fabric, revealing an intricate, subtle tonal pattern in deep muted green. The lighting is focused, bringing out the interplay of matte and shiny threads in a stark, high-contrast presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL47NVM5Eq4DUs9tc-U18VWoF0R4U1rd1cyADYd8dMG_agP_izWS9XlFNsrnruSLgaVpw7fhHgSFw2cd-pqIcIU6YFyo7OxSr89HjMNAU2XK16sGpqWtLbt_8xvJGkq9WF02Edn_JXwrZZaGAyVTJIP-uYAE2mRb4KHPYAxhFdmsFR9-KmOcwu8BeZMcPLAuwCQOMg0-aMGClUWH-WsFWhDhXt1wggfR6KK3R_feIsSWwzvYFXepoblQ"/>
+</div>
+<span class="font-label-caps text-label-caps text-secondary mb-2 tracking-widest uppercase">Damask / Heritage</span>
+<h3 class="font-headline-md text-headline-md text-primary">Forest Damask</h3>
+</div>
+</div>
+</section>
+<!-- Brand Values / Testimonial -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div class="relative">
+<span class="material-symbols-outlined text-[120px] text-surface-variant absolute -top-16 -left-8 -z-10 select-none">format_quote</span>
+<blockquote class="font-headline-md text-headline-md md:text-[40px] leading-tight text-primary mb-8 relative z-10">
+                        "Velour &amp; Weave textiles completely transformed our recent Milan project. The tactile quality and depth of color are unmatched in the industry."
+                    </blockquote>
+<div class="flex items-center gap-4">
+<div class="w-12 h-px bg-primary"></div>
+<p class="font-body-md text-body-md text-secondary font-medium tracking-wide">ELENA ROSTOVA, INTERIOR ARCHITECT</p>
+</div>
+</div>
+<div class="flex flex-col gap-12 pl-0 md:pl-12 border-l-0 md:border-l border-outline-variant/30">
+<div>
+<h4 class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-4">Uncompromising Quality</h4>
+<p class="font-body-md text-body-md text-secondary">We source only the finest natural fibers, partnering with mills that have honed their craft over generations to ensure every yard meets our exacting standards.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-4">Bespoke Curation</h4>
+<p class="font-body-md text-body-md text-secondary">Our digital showroom is tailored for the trade, offering personalized sample curation and dedicated advisory services for complex design requirements.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface w-full pt-section-gap pb-12 border-t border-outline-variant/30 mt-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<div class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-8">
+                    VELOUR &amp; WEAVE
+                </div>
+<p class="font-body-md text-body-md text-secondary mb-8">Crafting environments through the language of exceptional textiles.</p>
+<div class="text-secondary">
+                    © 2024 VELOUR &amp; WEAVE. CRAFTED FOR THE DISCERNING.
+                </div>
+</div>
+<div class="md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
+<div class="flex flex-col gap-4">
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-all duration-300" href="#">Collections</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-all duration-300" href="#">Bespoke Service</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-all duration-300" href="#">Heritage</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-all duration-300" href="#">Legal</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-all duration-300" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-all duration-300" href="#">Contact</a>
+</div>
+<div class="col-span-2 md:col-span-1 flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-2">Join the Registry</h4>
+<div class="relative border-b border-primary pb-2">
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 font-body-md text-body-md text-primary placeholder-secondary/50" placeholder="Email Address" type="email"/>
+<button class="absolute right-0 top-0 text-primary">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

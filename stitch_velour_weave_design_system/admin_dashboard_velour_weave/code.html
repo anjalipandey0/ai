@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VELOUR &amp; WEAVE - Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..900&amp;family=Inter:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f3f0f0",
+                        "on-secondary-fixed": "#1c1c18",
+                        "on-primary-fixed-variant": "#444749",
+                        "on-tertiary-fixed": "#241a08",
+                        "on-primary-container": "#828587",
+                        "secondary": "#5f5e59",
+                        "on-surface": "#1b1c1c",
+                        "inverse-primary": "#c5c7c9",
+                        "outline-variant": "#c4c7c9",
+                        "secondary-container": "#e5e2db",
+                        "on-background": "#1b1c1c",
+                        "surface-tint": "#5c5f61",
+                        "surface-container-high": "#eae7e7",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#f3e0c3",
+                        "secondary-fixed-dim": "#c9c6c0",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#191c1e",
+                        "error": "#ba1a1a",
+                        "outline": "#74777a",
+                        "primary-fixed": "#e1e2e5",
+                        "on-surface-variant": "#444749",
+                        "primary-container": "#1a1d1f",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#524530",
+                        "surface-bright": "#fcf9f8",
+                        "tertiary": "#040200",
+                        "tertiary-container": "#251b09",
+                        "on-tertiary-container": "#92836a",
+                        "surface-dim": "#dcd9d9",
+                        "secondary-fixed": "#e5e2db",
+                        "on-secondary-container": "#65645f",
+                        "inverse-surface": "#303030",
+                        "background": "#fcf9f8",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e4e2e1",
+                        "surface-container-low": "#f6f3f2",
+                        "primary-fixed-dim": "#c5c7c9",
+                        "primary": "#010203",
+                        "surface": "#fcf9f8",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#d6c4a8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#474742"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "container-max": "1440px",
+                        "gutter": "32px",
+                        "unit": "8px",
+                        "section-gap": "128px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-md": ["Bodoni Moda"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Bodoni Moda"],
+                        "headline-lg": ["Bodoni Moda"],
+                        "label-caps": ["Inter"],
+                        "headline-lg-mobile": ["Bodoni Moda"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["84px", { "lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "38px", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #fcf9f8; color: #1b1c1c; font-family: 'Inter', sans-serif; }
+        .ambient-shadow { box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex">
+<!-- Sidebar Navigation -->
+<aside class="w-64 border-r border-outline-variant/30 flex flex-col justify-between hidden md:flex sticky top-0 h-screen bg-surface-container-lowest z-40">
+<div class="p-8">
+<h1 class="font-display-lg text-headline-md text-primary tracking-tighter uppercase mb-12">VELOUR &amp; WEAVE</h1>
+<nav class="space-y-4">
+<a class="flex items-center space-x-3 text-primary font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center space-x-3 text-secondary hover:text-primary transition-colors duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Catalog</span>
+</a>
+<a class="flex items-center space-x-3 text-secondary hover:text-primary transition-colors duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span>Schedule</span>
+</a>
+<a class="flex items-center space-x-3 text-secondary hover:text-primary transition-colors duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="reviews">reviews</span>
+<span>Reviews</span>
+</a>
+<a class="flex items-center space-x-3 text-secondary hover:text-primary transition-colors duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+<div class="p-8 border-t border-outline-variant/30">
+<a class="flex items-center space-x-3 text-secondary hover:text-primary transition-colors duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto w-full max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile py-12 pb-32">
+<!-- Header -->
+<header class="flex justify-between items-end mb-16 border-b border-outline-variant/30 pb-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tighter">Overview</h2>
+<p class="font-body-md text-secondary mt-2">Welcome back. Here is the current status of the showroom.</p>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 hover:bg-[#c9c6c0] transition-colors duration-300 uppercase tracking-widest font-label-caps text-label-caps flex items-center space-x-2">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+<span>Add New Textile</span>
+</button>
+</header>
+<!-- Bento Grid Analytics -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-section-gap">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 p-8 flex flex-col justify-between min-h-[200px] ambient-shadow">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Pending Consultations</span>
+<span class="material-symbols-outlined text-outline" data-icon="event">event</span>
+</div>
+<div class="mt-8">
+<span class="font-headline-lg text-headline-lg text-primary">12</span>
+<p class="text-sm text-secondary mt-1">3 requiring immediate attention</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 p-8 flex flex-col justify-between min-h-[200px] ambient-shadow">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Top Category</span>
+<span class="material-symbols-outlined text-outline" data-icon="category">category</span>
+</div>
+<div class="mt-8">
+<span class="font-headline-lg text-headline-md text-primary">Silk</span>
+<p class="text-sm text-secondary mt-1">45% of total inquiries this month</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 p-8 flex flex-col justify-between min-h-[200px] ambient-shadow">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Avg Rating</span>
+<span class="material-symbols-outlined text-outline" data-icon="star_rate">star_rate</span>
+</div>
+<div class="mt-8">
+<span class="font-headline-lg text-headline-lg text-primary">4.9/5</span>
+<p class="text-sm text-secondary mt-1">Based on 124 verified reviews</p>
+</div>
+</div>
+</section>
+<!-- Two Column Layout: Schedule & Reviews -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter mb-section-gap">
+<!-- Schedule Manager -->
+<section class="border border-outline-variant/30 p-8 ambient-shadow bg-surface-container-lowest">
+<div class="flex justify-between items-center mb-8 border-b border-outline-variant/30 pb-4">
+<h3 class="font-headline-md text-headline-md text-primary">Upcoming Appointments</h3>
+<a class="font-label-caps text-label-caps text-secondary hover:text-primary uppercase tracking-widest transition-colors duration-300" href="#">View All</a>
+</div>
+<ul class="space-y-6">
+<li class="flex justify-between items-center pb-6 border-b border-outline-variant/10">
+<div>
+<p class="font-bold text-primary">Eleanor Vance - Private Viewing</p>
+<p class="text-sm text-secondary mt-1">Today, 2:00 PM</p>
+</div>
+<span class="px-3 py-1 border border-primary text-primary font-label-caps text-[10px] uppercase tracking-widest">Confirmed</span>
+</li>
+<li class="flex justify-between items-center pb-6 border-b border-outline-variant/10">
+<div>
+<p class="font-bold text-primary">Studio Ashby - Trade Account</p>
+<p class="text-sm text-secondary mt-1">Tomorrow, 10:00 AM</p>
+</div>
+<span class="px-3 py-1 border border-secondary text-secondary font-label-caps text-[10px] uppercase tracking-widest">Pending</span>
+</li>
+<li class="flex justify-between items-center">
+<div>
+<p class="font-bold text-primary">Oliver Sterling - Restock Consult</p>
+<p class="text-sm text-secondary mt-1">Oct 24, 1:00 PM</p>
+</div>
+<span class="px-3 py-1 bg-surface-variant text-on-surface-variant font-label-caps text-[10px] uppercase tracking-widest">Completed</span>
+</li>
+</ul>
+</section>
+<!-- Review Moderation -->
+<section class="border border-outline-variant/30 p-8 ambient-shadow bg-surface-container-lowest">
+<div class="flex justify-between items-center mb-8 border-b border-outline-variant/30 pb-4">
+<h3 class="font-headline-md text-headline-md text-primary">Review Moderation</h3>
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">2 Unread</span>
+</div>
+<div class="space-y-8">
+<div class="pb-6 border-b border-outline-variant/10">
+<div class="flex items-center space-x-2 mb-2 text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+</div>
+<p class="italic text-secondary font-body-md">"The bespoke velvet we sourced for the Mayfair project is absolutely stunning. The texture is unparalleled."</p>
+<p class="text-sm font-bold mt-2">- Sophia R.</p>
+<div class="mt-4 flex space-x-4">
+<button class="font-label-caps text-label-caps text-primary border-b border-primary pb-1 uppercase tracking-widest hover:text-secondary transition-colors duration-300">Approve</button>
+<button class="font-label-caps text-label-caps text-secondary hover:text-error transition-colors duration-300 uppercase tracking-widest">Dismiss</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Schedule Meeting - Velour &amp; Weave</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-on-surface": "#f3f0f0",
+                        "on-secondary-fixed": "#1c1c18",
+                        "on-primary-fixed-variant": "#444749",
+                        "on-tertiary-fixed": "#241a08",
+                        "on-primary-container": "#828587",
+                        "secondary": "#5f5e59",
+                        "on-surface": "#1b1c1c",
+                        "inverse-primary": "#c5c7c9",
+                        "outline-variant": "#c4c7c9",
+                        "secondary-container": "#e5e2db",
+                        "on-background": "#1b1c1c",
+                        "surface-tint": "#5c5f61",
+                        "surface-container-high": "#eae7e7",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#f3e0c3",
+                        "secondary-fixed-dim": "#c9c6c0",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#191c1e",
+                        "error": "#ba1a1a",
+                        "outline": "#74777a",
+                        "primary-fixed": "#e1e2e5",
+                        "on-surface-variant": "#444749",
+                        "primary-container": "#1a1d1f",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#524530",
+                        "surface-bright": "#fcf9f8",
+                        "tertiary": "#040200",
+                        "tertiary-container": "#251b09",
+                        "on-tertiary-container": "#92836a",
+                        "surface-dim": "#dcd9d9",
+                        "secondary-fixed": "#e5e2db",
+                        "on-secondary-container": "#65645f",
+                        "inverse-surface": "#303030",
+                        "background": "#fcf9f8",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e4e2e1",
+                        "surface-container-low": "#f6f3f2",
+                        "primary-fixed-dim": "#c5c7c9",
+                        "primary": "#010203",
+                        "surface": "#fcf9f8",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#d6c4a8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#474742"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-desktop": "64px",
+                        "container-max": "1440px",
+                        "gutter": "32px",
+                        "unit": "8px",
+                        "section-gap": "128px",
+                        "margin-mobile": "20px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Inter", "sans-serif"],
+                        "headline-md": ["Bodoni Moda", "serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "display-lg": ["Bodoni Moda", "serif"],
+                        "headline-lg": ["Bodoni Moda", "serif"],
+                        "label-caps": ["Inter", "sans-serif"],
+                        "headline-lg-mobile": ["Bodoni Moda", "serif"]
+                    },
+                    fontSize: {
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "headline-md": ["32px", { lineHeight: "40px", fontWeight: "400" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "display-lg": ["84px", { lineHeight: "92px", letterSpacing: "-0.02em", fontWeight: "600" }],
+                        "headline-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.01em", fontWeight: "500" }],
+                        "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.1em", fontWeight: "600" }],
+                        "headline-lg-mobile": ["32px", { lineHeight: "38px", fontWeight: "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .product-shadow {
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05);
+        }
+        .input-minimal {
+            border-bottom: 1px solid theme('colors.secondary-fixed-dim');
+            transition: border-color 0.3s ease;
+        }
+        .input-minimal:focus {
+            border-bottom: 2px solid theme('colors.primary');
+            outline: none;
+            box-shadow: none;
+        }
+        .btn-primary {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: theme('colors.tertiary-fixed-dim');
+            color: theme('colors.on-tertiary-fixed');
+        }
+        .radio-custom:checked + label {
+            border-color: theme('colors.primary');
+            background-color: theme('colors.surface-container-low');
+        }
+        .date-cell.selected {
+            background-color: theme('colors.primary');
+            color: theme('colors.on-primary');
+        }
+        .time-slot.selected {
+            border-color: theme('colors.primary');
+            background-color: theme('colors.primary');
+            color: theme('colors.on-primary');
+        }
+        
+        /* Success Animation */
+        .success-overlay {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+        .success-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased">
+<!-- TopNavBar -->
+<nav class="fixed w-full top-0 z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/20 hidden md:flex justify-between items-center px-margin-desktop py-6 max-w-container-max mx-auto flat no shadows">
+<a class="font-display-lg text-headline-md text-primary dark:text-on-primary-fixed uppercase tracking-tighter" href="#">VELOUR &amp; WEAVE</a>
+<ul class="flex space-x-8">
+<li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-on-primary-fixed transition-colors duration-300 font-body-md text-body-md uppercase tracking-widest" href="#">Home</a></li>
+<li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-on-primary-fixed transition-colors duration-300 font-body-md text-body-md uppercase tracking-widest" href="#">Catalog</a></li>
+<li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-on-primary-fixed transition-colors duration-300 font-body-md text-body-md uppercase tracking-widest" href="#">About</a></li>
+<li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-on-primary-fixed transition-colors duration-300 font-body-md text-body-md uppercase tracking-widest" href="#">History</a></li>
+<li><a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-on-primary-fixed transition-colors duration-300 font-body-md text-body-md uppercase tracking-widest" href="#">Testimonials</a></li>
+<li><a class="text-primary dark:text-on-primary-fixed font-bold border-b border-primary hover:text-primary dark:hover:text-on-primary-fixed transition-colors duration-300 font-body-md text-body-md uppercase tracking-widest opacity-70 transition-opacity" href="#">Schedule Meeting</a></li>
+</ul>
+<button class="bg-primary text-on-primary px-6 py-3 font-label-caps uppercase tracking-widest btn-primary hidden lg:block">Book Consultation</button>
+</nav>
+<!-- Mobile Nav (Simplified for focus) -->
+<nav class="fixed w-full top-0 z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/20 md:hidden flex justify-between items-center px-margin-mobile py-4">
+<a class="font-display-lg text-headline-lg-mobile text-primary uppercase tracking-tighter" href="#">V&amp;W</a>
+<button class="text-primary"><span class="material-symbols-outlined">menu</span></button>
+</nav>
+<!-- Main Content Area - Distraction Free Booking -->
+<main class="flex-grow pt-[120px] md:pt-[180px] pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Context & Introduction -->
+<div class="lg:col-span-4 lg:col-start-1 mb-12 lg:mb-0">
+<span class="font-label-caps uppercase text-secondary mb-4 block">Bespoke Consultations</span>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-primary mb-6">Schedule Your Review</h1>
+<p class="font-body-lg text-secondary mb-8">
+                    Reserve dedicated time with our textile specialists to explore collections tailored to your next architectural or interior project.
+                </p>
+<div class="hidden lg:block">
+<img alt="Textile Swatches" class="w-full h-auto product-shadow object-cover aspect-[3/4]" data-alt="A moody, high-contrast close-up shot of luxurious textured fabric swatches neatly arranged on a dark slate surface. Soft, directional light highlights the intricate weave and raw threads, emphasizing a sophisticated, modern editorial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcCcKLOIjgd6mRS_625hjpUMJkSJ4fLtMaRTx7elDZ1GMFGri0RxIpibATZWoIttukGgE4zDEczLvfhxVGvnFRY-qKltYFsNmi-kwOv56y3oBnv8SFUvQXKl1ASVOATW8o9vfAX0ONRKJfY6xWD9FVFystrSccy6AcDfftRjnrC6Kmk4y4uFlU2xvuiiNMsKMRlDjETPsgEZjgVtn8yo0r46UPUdX760qfj9cohJCjzKyWG2JXfAa7Lw"/>
+</div>
+</div>
+<!-- Booking Interface -->
+<div class="lg:col-span-7 lg:col-start-6">
+<form class="bg-surface-container-lowest p-0 md:p-8 relative" id="booking-form">
+<!-- Step 1: Meeting Type -->
+<div class="mb-12">
+<h2 class="font-label-caps uppercase text-primary mb-6 tracking-widest border-b border-outline-variant/30 pb-2">1. Select Consultation Type</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="relative">
+<input checked="" class="peer sr-only radio-custom" id="type_virtual" name="meeting_type" type="radio"/>
+<label class="block border border-outline-variant/50 p-6 cursor-pointer hover:bg-surface-container-low transition-colors h-full flex flex-col justify-between" for="type_virtual">
+<span class="material-symbols-outlined text-secondary mb-4">devices</span>
+<div>
+<h3 class="font-body-lg text-primary mb-2">Virtual Showroom Walkthrough</h3>
+<p class="font-body-md text-secondary text-sm">Guided digital tour of our latest collections.</p>
+</div>
+</label>
+</div>
+<div class="relative">
+<input class="peer sr-only radio-custom" id="type_inperson" name="meeting_type" type="radio"/>
+<label class="block border border-outline-variant/50 p-6 cursor-pointer hover:bg-surface-container-low transition-colors h-full flex flex-col justify-between" for="type_inperson">
+<span class="material-symbols-outlined text-secondary mb-4">handshake</span>
+<div>
+<h3 class="font-body-lg text-primary mb-2">In-person Sample Review</h3>
+<p class="font-body-md text-secondary text-sm">Tactile exploration at our flagship studio.</p>
+</div>
+</label>
+</div>
+<div class="relative">
+<input class="peer sr-only radio-custom" id="type_bulk" name="meeting_type" type="radio"/>
+<label class="block border border-outline-variant/50 p-6 cursor-pointer hover:bg-surface-container-low transition-colors h-full flex flex-col justify-between" for="type_bulk">
+<span class="material-symbols-outlined text-secondary mb-4">inventory_2</span>
+<div>
+<h3 class="font-body-lg text-primary mb-2">Custom Bulk Order Consultation</h3>
+<p class="font-body-md text-secondary text-sm">For large-scale architectural projects.</p>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Step 2: Date & Time Picker -->
+<div class="mb-12">
+<h2 class="font-label-caps uppercase text-primary mb-6 tracking-widest border-b border-outline-variant/30 pb-2">2. Select Date &amp; Time</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Custom Calendar UI -->
+<div>
+<div class="flex justify-between items-center mb-4">
+<button class="text-secondary hover:text-primary" type="button"><span class="material-symbols-outlined">chevron_left</span></button>
+<span class="font-body-lg text-primary">October 2024</span>
+<button class="text-secondary hover:text-primary" type="button"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+<div class="grid grid-cols-7 gap-2 text-center mb-2">
+<span class="font-label-caps text-secondary text-xs">Su</span>
+<span class="font-label-caps text-secondary text-xs">Mo</span>
+<span class="font-label-caps text-secondary text-xs">Tu</span>
+<span class="font-label-caps text-secondary text-xs">We</span>
+<span class="font-label-caps text-secondary text-xs">Th</span>
+<span class="font-label-caps text-secondary text-xs">Fr</span>
+<span class="font-label-caps text-secondary text-xs">Sa</span>
+</div>
+<div class="grid grid-cols-7 gap-2 text-center font-body-md" id="calendar-grid">
+<!-- Populated by JS for visual effect -->
+<div class="py-2 text-outline-variant">29</div>
+<div class="py-2 text-outline-variant">30</div>
+<div class="py-2 cursor-pointer hover:bg-surface-container-low date-cell">1</div>
+<div class="py-2 cursor-pointer hover:bg-surface-container-low date-cell">2</div>
+<div class="py-2 cursor-pointer hover:bg-surface-container-low date-cell">3</div>
+<div class="py-2 cursor-pointer hover:bg-surface-container-low date-cell">4</div>
+<div class="py-2 cursor-pointer hover:bg-surface-container-low date-cell">5</div>
+<div class="py-2 cursor-pointer hover:bg-surface-container-low date-cell">6</div>
+<div class="py-2 cursor-pointer hover:bg-surface-container-low date-cell">7</div>
+<div class="py-2 cursor-pointer hover:bg-surface-container-low date-cell">8</div>
+<div class="py-2 cursor-pointer hover:bg-surface-container-low date-cell">9</div>
+<div class="py-2 cursor-pointer hover:bg-surface-container-low date-cell">10</div>
+<div class="py-2 cursor-pointer hover:bg-surface-container-low date-cell">11</div>
+<div class="py-2 cursor-pointer hover:bg-surface-container-low date-cell">12</div>
+<div class="py-2 cursor-pointer hover:bg-surface-container-low date-cell">13</div>
+<div class="py-2 cursor-pointer hover:bg-surface-container-low date-cell selected">14</div>
+<div class="py-2 cursor-pointer hover:bg-surface-container-low date-cell">15</div>
+<div class="py-2 cursor-pointer hover:bg-surface-container-low date-cell">16</div>
+<div class="py-2 cursor-pointer hover:bg-surface-container-low date-cell">17</div>
+<div class="py-2 cursor-pointer hover:bg-surface-container-low date-cell">18</div>
+<div class="py-2 cursor-pointer hover:bg-surface-container-low date-cell">19</div>
+</div>
+</div>
+<!-- Time Slots -->
+<div>
+<span class="font-body-lg text-primary block mb-4">Available Times (EST)</span>
+<div class="grid grid-cols-2 gap-3">
+<button class="border border-outline-variant/50 py-3 font-body-md text-secondary hover:border-primary transition-colors time-slot" type="button">09:00 AM</button>
+<button class="border border-outline-variant/50 py-3 font-body-md text-secondary hover:border-primary transition-colors time-slot" type="button">10:30 AM</button>
+<button class="border border-outline-variant/50 py-3 font-body-md text-secondary hover:border-primary transition-colors time-slot selected" type="button">01:00 PM</button>
+<button class="border border-outline-variant/50 py-3 font-body-md text-secondary hover:border-primary transition-colors time-slot" type="button">02:30 PM</button>
+<button class="border border-outline-variant/50 py-3 font-body-md text-secondary hover:border-primary transition-colors time-slot" type="button">04:00 PM</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 3: Contact Details -->
+<div class="mb-12">
+<h2 class="font-label-caps uppercase text-primary mb-6 tracking-widest border-b border-outline-variant/30 pb-2">3. Your Details</h2>
+<div class="space-y-8">
+<div class="relative">
+<label class="font-label-caps text-secondary text-xs absolute -top-4 left-0" for="name">Full Name</label>
+<input class="w-full bg-transparent border-0 input-minimal py-2 pl-0 focus:ring-0 font-body-lg text-primary" id="name" name="name" placeholder="Jane Doe" required="" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative">
+<label class="font-label-caps text-secondary text-xs absolute -top-4 left-0" for="brand">Brand / Studio</label>
+<input class="w-full bg-transparent border-0 input-minimal py-2 pl-0 focus:ring-0 font-body-lg text-primary" id="brand" name="brand" placeholder="Design Studio LLC" required="" type="text"/>
+</div>
+<div class="relative">
+<label class="font-label-caps text-secondary text-xs absolute -top-4 left-0" for="email">Email Address</label>
+<input class="w-full bg-transparent border-0 input-minimal py-2 pl-0 focus:ring-0 font-body-lg text-primary" id="email" name="email" placeholder="jane@studio.com" required="" type="email"/>
+</div>
+</div>
+<div class="relative">
+<label class="font-label-caps text-secondary text-xs absolute -top-4 left-0" for="timeline">Project Timeline &amp; Details</label>
+<textarea class="w-full bg-transparent border-0 input-minimal py-2 pl-0 focus:ring-0 font-body-lg text-primary resize-none" id="timeline" name="timeline" placeholder="Briefly describe your project scope and expected timeline..." rows="3"></textarea>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-5 font-label-caps uppercase tracking-widest btn-primary" type="submit">Confirm Appointment</button>
+<!-- Success State Overlay -->
+<div class="absolute inset-0 bg-surface/95 backdrop-blur-sm z-10 flex flex-col items-center justify-center text-center p-8 success-overlay" id="success-state">
+<span class="material-symbols-outlined text-6xl text-primary mb-6" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-primary mb-4">Consultation Confirmed</h2>
+<p class="font-body-lg text-secondary max-w-md mx-auto mb-8">
+                            We look forward to meeting with you on October 14th at 01:00 PM. A calendar invitation has been sent to your email.
+                        </p>
+<button class="border border-outline-variant text-primary px-8 py-3 font-label-caps uppercase tracking-widest hover:bg-surface-container-low transition-colors" onclick="resetForm()" type="button">Return to Home</button>
+</div>
+</form>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-section-gap pb-12 border-t border-outline-variant/30 bg-surface dark:bg-surface-container flat no shadows mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-4">
+<h2 class="font-headline-lg text-headline-lg text-primary dark:text-on-surface mb-8">VELOUR &amp; WEAVE</h2>
+</div>
+<div class="col-span-1">
+<a class="block text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-inverse-primary transition-all duration-300 font-body-md text-body-md mb-2" href="#">Collections</a>
+</div>
+<div class="col-span-1">
+<a class="block text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-inverse-primary transition-all duration-300 font-body-md text-body-md mb-2" href="#">Bespoke Service</a>
+</div>
+<div class="col-span-1">
+<a class="block text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-inverse-primary transition-all duration-300 font-body-md text-body-md mb-2" href="#">Heritage</a>
+</div>
+<div class="col-span-1">
+<a class="block text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-inverse-primary transition-all duration-300 font-body-md text-body-md mb-2" href="#">Legal</a>
+</div>
+<div class="col-span-1">
+<a class="block text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-inverse-primary transition-all duration-300 font-body-md text-body-md mb-2" href="#">Privacy Policy</a>
+</div>
+<div class="col-span-1">
+<a class="block text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-inverse-primary transition-all duration-300 font-body-md text-body-md mb-2" href="#">Contact</a>
+</div>
+<div class="col-span-1 md:col-span-4 mt-8 pt-8 border-t border-outline-variant/20">
+<p class="font-body-md text-body-md text-secondary">© 2024 VELOUR &amp; WEAVE. CRAFTED FOR THE DISCERNING.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Interaction Logic for Form
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('booking-form');
+            const successState = document.getElementById('success-state');
+            
+            // Date cell selection logic
+            const dateCells = document.querySelectorAll('.date-cell');
+            dateCells.forEach(cell => {
+                cell.addEventListener('click', () => {
+                    dateCells.forEach(c => c.classList.remove('selected'));
+                    cell.classList.add('selected');
+                });
+            });
+
+            // Time slot selection logic
+            const timeSlots = document.querySelectorAll('.time-slot');
+            timeSlots.forEach(slot => {
+                slot.addEventListener('click', () => {
+                    timeSlots.forEach(s => s.classList.remove('selected'));
+                    slot.classList.add('selected');
+                });
+            });
+
+            // Form Submit Logic
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                // Basic validation (HTML5 required attributes handle mostly)
+                
+                // Show success overlay
+                successState.classList.add('active');
+                
+                // Scroll to top of form smoothly
+                form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        });
+
+        function resetForm() {
+            const form = document.getElementById('booking-form');
+            const successState = document.getElementById('success-state');
+            
+            form.reset();
+            successState.classList.remove('active');
+        }
+    </script>
+</body></html>

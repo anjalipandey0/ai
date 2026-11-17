@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #fcf9f8;
+    color: #1b1c1c;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+  }
+}
+
+.product-shadow {
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+}
+
+.ambient-shadow {
+  box-shadow: 0 0 40px rgba(27, 28, 28, 0.05);
+}
+
+.image-overlay {
+  background: linear-gradient(to top, rgba(27, 28, 28, 0.3) 0%, rgba(27, 28, 28, 0) 50%);
+}
+
+.hover-lift {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.15);
+}
+
+.hover-scale-img img {
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hover-scale-img:hover img {
+  transform: scale(1.05);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.sidebar-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.sidebar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background-color: #c4c7c9;
+  border-radius: 4px;
+}
+
+.custom-checkbox {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #74777a;
+  border-radius: 2px;
+  display: grid;
+  place-content: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.custom-checkbox::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: #010203;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #010203;
+}
+.custom-checkbox:checked::before {
+  transform: scale(1);
+}
+.custom-checkbox:checked {
+  border-color: #010203;
+}
+
+.glass-panel {
+  background: rgba(252, 249, 248, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(196, 199, 201, 0.3);
+}
+
+.textile-overlay {
+  background: linear-gradient(to top, rgba(1, 2, 3, 0.2), transparent);
+}
+
+.input-minimal {
+  border-bottom: 1px solid #c9c6c0;
+  transition: border-color 0.3s ease;
+}
+.input-minimal:focus {
+  border-bottom: 2px solid #010203;
+  outline: none;
+  box-shadow: none;
+}
+
+.btn-primary {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: #d6c4a8;
+  color: #241a08;
+}
+
+.textile-chip-active {
+  border-bottom: 2px solid #010203;
+}
