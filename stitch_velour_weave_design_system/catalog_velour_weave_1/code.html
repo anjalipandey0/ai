@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VELOUR & WEAVE - Catalog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Smooth scrolling and basic resets */
+        html { scroll-behavior: smooth; }
+        body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        
+        /* Custom scrollbar for sidebar */
+        .sidebar-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .sidebar-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .sidebar-scroll::-webkit-scrollbar-thumb {
+            background-color: #c4c7c9;
+            border-radius: 4px;
+        }
+        
+        /* Checkbox styling */
+        .custom-checkbox {
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border: 1px solid #74777a;
+            border-radius: 2px;
+            display: grid;
+            place-content: center;
+            transition: all 0.2s ease;
+        }
+        .custom-checkbox::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background-color: #010203;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em #010203;
+        }
+        .custom-checkbox:checked::before {
+            transform: scale(1);
+        }
+        .custom-checkbox:checked {
+            border-color: #010203;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-on-surface": "#f3f0f0",
+                        "on-secondary-fixed": "#1c1c18",
+                        "on-primary-fixed-variant": "#444749",
+                        "on-tertiary-fixed": "#241a08",
+                        "on-primary-container": "#828587",
+                        "secondary": "#5f5e59",
+                        "on-surface": "#1b1c1c",
+                        "inverse-primary": "#c5c7c9",
+                        "outline-variant": "#c4c7c9",
+                        "secondary-container": "#e5e2db",
+                        "on-background": "#1b1c1c",
+                        "surface-tint": "#5c5f61",
+                        "surface-container-high": "#eae7e7",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#f3e0c3",
+                        "secondary-fixed-dim": "#c9c6c0",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#191c1e",
+                        "error": "#ba1a1a",
+                        "outline": "#74777a",
+                        "primary-fixed": "#e1e2e5",
+                        "on-surface-variant": "#444749",
+                        "primary-container": "#1a1d1f",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#524530",
+                        "surface-bright": "#fcf9f8",
+                        "tertiary": "#040200",
+                        "tertiary-container": "#251b09",
+                        "on-tertiary-container": "#92836a",
+                        "surface-dim": "#dcd9d9",
+                        "secondary-fixed": "#e5e2db",
+                        "on-secondary-container": "#65645f",
+                        "inverse-surface": "#303030",
+                        "background": "#fcf9f8",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e4e2e1",
+                        "surface-container-low": "#f6f3f2",
+                        "primary-fixed-dim": "#c5c7c9",
+                        "primary": "#010203",
+                        "surface": "#fcf9f8",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#d6c4a8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#474742"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-desktop": "64px",
+                        "container-max": "1440px",
+                        "gutter": "32px",
+                        "unit": "8px",
+                        "section-gap": "128px",
+                        "margin-mobile": "20px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Inter"],
+                        "headline-md": ["Bodoni Moda"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Bodoni Moda"],
+                        "headline-lg": ["Bodoni Moda"],
+                        "label-caps": ["Inter"],
+                        "headline-lg-mobile": ["Bodoni Moda"]
+                    },
+                    fontSize: {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["84px", { "lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "38px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed w-full top-0 z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/20">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
+<div class="flex items-center">
+<a class="font-display-lg text-headline-md md:text-headline-md text-primary dark:text-on-primary-fixed uppercase tracking-tighter hover:opacity-70 transition-opacity" href="#">VELOUR & WEAVE</a>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-secondary dark:text-secondary-fixed-dim font-body-md text-body-md uppercase tracking-widest hover:text-primary dark:hover:text-on-primary-fixed transition-colors duration-300 hover:opacity-70" href="#">Home</a>
+<a class="text-primary dark:text-on-primary-fixed font-bold border-b border-primary font-body-md text-body-md uppercase tracking-widest hover:text-primary dark:hover:text-on-primary-fixed transition-colors duration-300 hover:opacity-70 pb-1" href="#">Catalog</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-body-md text-body-md uppercase tracking-widest hover:text-primary dark:hover:text-on-primary-fixed transition-colors duration-300 hover:opacity-70" href="#">About</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-body-md text-body-md uppercase tracking-widest hover:text-primary dark:hover:text-on-primary-fixed transition-colors duration-300 hover:opacity-70" href="#">History</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-body-md text-body-md uppercase tracking-widest hover:text-primary dark:hover:text-on-primary-fixed transition-colors duration-300 hover:opacity-70" href="#">Testimonials</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-body-md text-body-md uppercase tracking-widest hover:text-primary dark:hover:text-on-primary-fixed transition-colors duration-300 hover:opacity-70" href="#">Schedule Meeting</a>
+</div>
+<div class="hidden md:block">
+<button class="bg-primary text-on-primary font-body-md text-body-md px-6 py-3 uppercase tracking-widest hover:bg-tertiary-container hover:text-tertiary-fixed transition-colors duration-300 rounded-none">
+                    Book Consultation
+                </button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-grow pt-[120px] pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Header Section -->
+<header class="mb-16 md:mb-32">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-display-lg md:text-display-lg text-primary mb-6">The Collection</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl">
+                An archival selection of premium textiles, meticulously sourced and woven for structural integrity and profound tactile depth. Designed for discerning spaces.
+            </p>
+</header>
+<div class="flex flex-col lg:flex-row gap-gutter">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-1/4 flex-shrink-0 sidebar-scroll pr-4 pb-8 h-auto lg:h-[calc(100vh-200px)] lg:sticky top-[120px] overflow-y-auto hidden md:block border-r border-outline-variant/30">
+<div class="mb-12">
+<h3 class="font-label-caps text-label-caps text-secondary mb-6 border-b border-outline-variant/30 pb-2">MATERIAL</h3>
+<div class="space-y-4">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="custom-checkbox" type="checkbox"/>
+<span class="font-body-md text-body-md text-primary group-hover:text-secondary transition-colors">Silk</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="custom-checkbox" type="checkbox"/>
+<span class="font-body-md text-body-md text-primary group-hover:text-secondary transition-colors">Linen</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="custom-checkbox" type="checkbox"/>
+<span class="font-body-md text-body-md text-primary group-hover:text-secondary transition-colors">Wool</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="custom-checkbox" type="checkbox"/>
+<span class="font-body-md text-body-md text-primary group-hover:text-secondary transition-colors">Velvet</span>
+</label>
+</div>
+</div>
+<div class="mb-12">
+<h3 class="font-label-caps text-label-caps text-secondary mb-6 border-b border-outline-variant/30 pb-2">COLOR PALETTE</h3>
+<div class="flex flex-wrap gap-2">
+<button aria-label="Earth Tones" class="w-8 h-8 rounded-none border border-outline-variant bg-[#F3E0C3] focus:ring-1 ring-primary ring-offset-2" title="Earth Tones"></button>
+<button aria-label="Voids" class="w-8 h-8 rounded-none border border-outline-variant bg-[#1A1D1F] focus:ring-1 ring-primary ring-offset-2" title="Voids"></button>
+<button aria-label="Neutrals" class="w-8 h-8 rounded-none border border-outline-variant bg-[#EAE7E7] focus:ring-1 ring-primary ring-offset-2" title="Neutrals"></button>
+<button aria-label="Olive" class="w-8 h-8 rounded-none border border-outline-variant bg-[#92836A] focus:ring-1 ring-primary ring-offset-2" title="Olive"></button>
+<button aria-label="Deep Earth" class="w-8 h-8 rounded-none border border-outline-variant bg-[#524530] focus:ring-1 ring-primary ring-offset-2" title="Deep Earth"></button>
+</div>
+</div>
+<div class="mb-12">
+<h3 class="font-label-caps text-label-caps text-secondary mb-6 border-b border-outline-variant/30 pb-2">PATTERN</h3>
+<div class="space-y-4">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="custom-checkbox" type="checkbox"/>
+<span class="font-body-md text-body-md text-primary group-hover:text-secondary transition-colors">Damask</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="custom-checkbox" type="checkbox"/>
+<span class="font-body-md text-body-md text-primary group-hover:text-secondary transition-colors">Geometric</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="custom-checkbox" type="checkbox"/>
+<span class="font-body-md text-body-md text-primary group-hover:text-secondary transition-colors">Solid / Textured</span>
+</label>
+</div>
+</div>
+<div class="mb-12">
+<h3 class="font-label-caps text-label-caps text-secondary mb-6 border-b border-outline-variant/30 pb-2">APPLICATION</h3>
+<div class="space-y-4">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="custom-checkbox" type="checkbox"/>
+<span class="font-body-md text-body-md text-primary group-hover:text-secondary transition-colors">Upholstery Heavy</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="custom-checkbox" type="checkbox"/>
+<span class="font-body-md text-body-md text-primary group-hover:text-secondary transition-colors">Drapery</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="custom-checkbox" type="checkbox"/>
+<span class="font-body-md text-body-md text-primary group-hover:text-secondary transition-colors">Wallcovering</span>
+</label>
+</div>
+</div>
+<button class="w-full border border-primary text-primary font-label-caps text-label-caps py-3 hover:bg-surface-container-high transition-colors uppercase tracking-widest">
+                    Clear Filters
+                </button>
+</aside>
+<!-- Product Grid -->
+<div class="w-full lg:w-3/4">
+<div class="flex justify-between items-center mb-8 border-b border-outline-variant/30 pb-4">
+<span class="font-label-caps text-label-caps text-secondary">Showing 24 Textiles</span>
+<div class="flex items-center gap-4">
+<span class="font-label-caps text-label-caps text-secondary hidden sm:inline">Sort by</span>
+<select class="bg-transparent border-none font-body-md text-body-md text-primary cursor-pointer focus:ring-0 p-0 pr-8 custom-select">
+<option>New Arrivals</option>
+<option>GSM: High to Low</option>
+<option>Alphabetical</option>
+</select>
+</div>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-gutter">
+<!-- Product 1 -->
+<div class="group relative flex flex-col cursor-pointer bg-surface hover:shadow-2xl transition-all duration-500 ease-in-out border border-transparent hover:border-outline-variant/30" onclick="document.getElementById('quick-view-modal').classList.remove('hidden'); document.getElementById('quick-view-modal').classList.add('flex');">
+<div class="relative w-full aspect-[4/5] overflow-hidden bg-surface-container-low mb-4">
+<img alt="Raw Jute Weave" class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A highly detailed close-up macro shot of raw jute weave fabric, showcasing thick, organic fibers intertwined in a tight, rugged structural pattern. The textile is presented flat in high-contrast light-mode editorial studio lighting, highlighting the deep shadows between the weaves and the warm, earthy texture. Elegant, minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfycqx1m-VWqJTP90OhIa9dqC9SkyXuyuGW8n4oyHpyC1w4y_C2BHjeJQBimEzTHBmhbkO_RCfi8Bu1zIWi7NNYKB7HW5kA1lmTsChDiXvgXI2enrZcju5qBcapIRcHcnWs5rAuRdmR0d_WygmS7YcWR8j7vqCMZX2vkorL1rtD4r26bVc9kth09cDrWgLkq67f0jd7_GyChsxbji7Mnn9B3S286-7V3Qn8VLv6UABQq4WJJJfZ-wfxA"/>
+<!-- Quick View Overlay -->
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<button class="bg-surface text-primary font-label-caps text-label-caps px-6 py-3 uppercase tracking-widest shadow-lg hover:bg-primary hover:text-on-primary transition-colors">
+                                    Quick View
+                                </button>
+</div>
+</div>
+<div class="px-2 pb-4">
+<span class="font-label-caps text-label-caps text-secondary block mb-1">Earth Tones • 850 GSM</span>
+<h3 class="font-headline-md text-headline-md text-primary truncate">Raw Jute Weave</h3>
+<p class="font-body-md text-body-md text-secondary mt-1">Upholstery Heavy</p>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group relative flex flex-col cursor-pointer bg-surface hover:shadow-2xl transition-all duration-500 ease-in-out border border-transparent hover:border-outline-variant/30">
+<div class="relative w-full aspect-[4/5] overflow-hidden bg-surface-container-low mb-4">
+<img alt="Midnight Velour" class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A macro studio photograph of profound midnight blue velour fabric. The image captures the dense, plush pile of the velvet catching subtle rim lighting, creating a luxurious sheen against deep, almost absolute black shadows. Minimalist, high-end interior design catalog aesthetic. Light-mode studio setting but the fabric itself is dark." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnQ71zkhLkkWxIaOHPlx0mkfDG47BKlulAZuJwuQrcz_1OjginX2uPImKR4MgFuQyUuuKk5ahSaR8lDfszalzBlQUaTBMOpQhp-ymPnIr5eQie2IDuJYPuFu4sdTbly6SyYtmeoRj1Nk_x2hcyhWkip2xcr065Tx8-xtCbuKpxYTLqe0cDmbtJhsT9YQ9kYFuLcTFKW1P3H3yLIIvjefkadHzhzagVNfDJpRQghmY1aH-yjlE4AjWunQ"/>
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<button class="bg-surface text-primary font-label-caps text-label-caps px-6 py-3 uppercase tracking-widest shadow-lg hover:bg-primary hover:text-on-primary transition-colors">
+                                    Quick View
+                                </button>
+</div>
+</div>
+<div class="px-2 pb-4">
+<span class="font-label-caps text-label-caps text-secondary block mb-1">Voids • 520 GSM</span>
+<h3 class="font-headline-md text-headline-md text-primary truncate">Midnight Velour</h3>
+<p class="font-body-md text-body-md text-secondary mt-1">Drapery / Accent</p>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group relative flex flex-col cursor-pointer bg-surface hover:shadow-2xl transition-all duration-500 ease-in-out border border-transparent hover:border-outline-variant/30">
+<div class="relative w-full aspect-[4/5] overflow-hidden bg-surface-container-low mb-4">
+<img alt="Organic Silk Crepe" class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A stark, beautiful editorial shot of organic silk crepe fabric draping gracefully across the frame. The fabric is a pristine, warm ivory color with a distinct matte crepe texture. Shot in bright, soft light-mode illumination to emphasize the fluid fall and delicate, slightly crinkled surface. Minimalist luxury presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCbPFldvgCfs0C1U3F0F-cFkAPTDylMnGtw5zQqY6Q2bq876LHNZ_PNmErCRhLeUB8aEF0WCbcyrVaWysADN2a_NUGzUeS6TPpMUO6HGLwF6KGc9XShfNGXQEx3d9ILIeKEuT4zzw-Sz5EpjOeARC9vqiD5can8CKVYuEnenZjeCzHmBvRTpRyTSGN7UVdSV_kyVf9GVcM3xw1n5W_mFGcdulNI6G8X-692zIdjfozXgd3zoQxlBjt3Q"/>
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-surface text-primary border border-outline-variant/30 px-2 py-1 font-label-caps text-[10px] tracking-widest uppercase">New</span>
+</div>
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<button class="bg-surface text-primary font-label-caps text-label-caps px-6 py-3 uppercase tracking-widest shadow-lg hover:bg-primary hover:text-on-primary transition-colors">
+                                    Quick View
+                                </button>
+</div>
+</div>
+<div class="px-2 pb-4">
+<span class="font-label-caps text-label-caps text-secondary block mb-1">Neutrals • 180 GSM</span>
+<h3 class="font-headline-md text-headline-md text-primary truncate">Organic Silk Crepe</h3>
+<p class="font-body-md text-body-md text-secondary mt-1">Drapery</p>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="group relative flex flex-col cursor-pointer bg-surface hover:shadow-2xl transition-all duration-500 ease-in-out border border-transparent hover:border-outline-variant/30">
+<div class="relative w-full aspect-[4/5] overflow-hidden bg-surface-container-low mb-4">
+<img alt="Heritage Damask" class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A close-up studio shot of a complex damask patterned fabric in muted olive and deep slate tones. The texture shows interwoven silk and matte wool yarns creating a raised, tactile relief. High-end editorial lighting emphasizes the heritage quality and the intricate interplay of matte and sheen surfaces. Clean, modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH_p-zWiK8xrXHc1wQp3_vVbQ7P2LVCl-5jvr57k3wLUveSw7zM1dOsH25ExrEqscJ0_NQtY-BtIJfF5xKdpvOlE8_w1o2s_gXw1GkEEQ_EdPY_YP9Gps7G4xiqkm1zGC7RdD5jInJyXX0d8Aqkb_Ib1IB_Zc-bP9PscH_BuUnMqyMTbcjE61m8F_RgejNerhBfFIYyNiEzZQx-cnSYd3ayJlpkRxJ38V7a977jYXodEuo8zplZuLvDQ"/>
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<button class="bg-surface text-primary font-label-caps text-label-caps px-6 py-3 uppercase tracking-widest shadow-lg hover:bg-primary hover:text-on-primary transition-colors">
+                                    Quick View
+                                </button>
+</div>
+</div>
+<div class="px-2 pb-4">
+<span class="font-label-caps text-label-caps text-secondary block mb-1">Earth Tones • 600 GSM</span>
+<h3 class="font-headline-md text-headline-md text-primary truncate">Heritage Damask</h3>
+<p class="font-body-md text-body-md text-secondary mt-1">Upholstery</p>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-24 flex justify-center items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant text-secondary hover:border-primary hover:text-primary transition-colors" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="font-body-md text-body-md text-primary font-bold">1</span>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="#">2</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="#">3</a>
+<span class="text-secondary">...</span>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="#">8</a>
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant text-secondary hover:border-primary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Quick View Modal (Hidden by default) -->
+<div class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-margin-mobile" id="quick-view-modal">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-primary/40 backdrop-blur-sm transition-opacity" onclick="document.getElementById('quick-view-modal').classList.add('hidden'); document.getElementById('quick-view-modal').classList.remove('flex');"></div>
+<!-- Modal Content -->
+<div class="relative bg-surface w-full max-w-5xl shadow-[0_40px_80px_rgba(1,2,3,0.1)] flex flex-col md:flex-row overflow-hidden max-h-[921px]">
+<button class="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center bg-surface/80 backdrop-blur text-primary border border-outline-variant hover:bg-surface-container transition-colors rounded-none" onclick="document.getElementById('quick-view-modal').classList.add('hidden'); document.getElementById('quick-view-modal').classList.remove('flex');">
+<span class="material-symbols-outlined">close</span>
+</button>
+<!-- Image Half -->
+<div class="w-full md:w-1/2 h-[409px] md:h-auto bg-surface-container-low relative">
+<img alt="Raw Jute Weave Detail" class="w-full h-full object-cover" data-alt="A highly detailed close-up macro shot of raw jute weave fabric, showcasing thick, organic fibers intertwined in a tight, rugged structural pattern. The textile is presented flat in high-contrast light-mode editorial studio lighting, highlighting the deep shadows between the weaves and the warm, earthy texture. Elegant, minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6ojM6e1QynOwKOPmMQ6DGRToU0MWuAzXYmFk25Ku71w1Eme-CObNwNFard2AlMiDzfoYd69mdLpJxCOZoLMt-NB5UU_sfuX6aJGeRvVn7zNpVCca1-VyeDnH_NPXeB6mSeU-OOn3a-SALiaLp9TtOJJRfgn7CbGWrP2Sq8ekCZcPRlClCOjUYpYejtrgkajlTfnBDjprW4bKOUnCFqTbw-e4siW4nce_bjdjRcXlmNO5eKFCui5wahw"/>
+</div>
+<!-- Details Half -->
+<div class="w-full md:w-1/2 p-8 md:p-12 overflow-y-auto">
+<span class="font-label-caps text-label-caps text-secondary block mb-2 tracking-widest">Earth Tones • Upholstery Heavy</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-6">Raw Jute Weave</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+                    A foundational textile designed for high-impact spaces. Woven from 100% natural organic jute, this fabric presents an exceptionally durable structure with a profound tactile narrative. Imperfections in the raw fiber are retained to ensure authenticity.
+                </p>
+<div class="grid grid-cols-2 gap-y-6 gap-x-4 mb-8">
+<div>
+<span class="font-label-caps text-label-caps text-secondary block mb-1">Composition</span>
+<span class="font-body-md text-body-md text-primary">100% Raw Jute</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-secondary block mb-1">Width</span>
+<span class="font-body-md text-body-md text-primary">140 cm / 55"</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-secondary block mb-1">Weight (GSM)</span>
+<span class="font-body-md text-body-md text-primary">850 g/m²</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-secondary block mb-1">Stock Status</span>
+<span class="font-body-md text-body-md flex items-center gap-2 text-primary">
+<span class="w-2 h-2 bg-[#010203] block"></span> Available
+                        </span>
+</div>
+</div>
+<div class="mb-10">
+<span class="font-label-caps text-label-caps text-secondary block mb-2 border-b border-outline-variant/30 pb-2">Care Instructions</span>
+<ul class="font-body-md text-body-md text-on-surface-variant space-y-2 mt-3">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">dry_cleaning</span> Professional dry clean only</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">block</span> Do not bleach</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">iron</span> Iron low heat on reverse</li>
+</ul>
+</div>
+<div class="flex gap-4 mt-auto">
+<button class="flex-1 bg-primary text-on-primary font-label-caps text-label-caps py-4 uppercase tracking-widest hover:bg-tertiary-container transition-colors rounded-none">
+                        Request Swatch
+                    </button>
+<button class="w-14 border border-outline-variant flex items-center justify-center text-primary hover:bg-surface-container transition-colors rounded-none">
+<span class="material-symbols-outlined">bookmark_add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full pt-section-gap pb-12 bg-surface dark:bg-surface-container border-t border-outline-variant/30 mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<a class="font-headline-lg text-headline-lg text-primary dark:text-on-surface mb-8 block uppercase tracking-tighter" href="#">VELOUR & WEAVE</a>
+<p class="font-body-md text-body-md text-secondary dark:text-on-secondary-container mt-4">
+                    © 2024 VELOUR & WEAVE. CRAFTED FOR THE DISCERNING.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-body-md text-body-md text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-inverse-primary transition-all duration-300" href="#">Collections</a>
+<a class="font-body-md text-body-md text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-inverse-primary transition-all duration-300" href="#">Bespoke Service</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-body-md text-body-md text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-inverse-primary transition-all duration-300" href="#">Heritage</a>
+<a class="font-body-md text-body-md text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-inverse-primary transition-all duration-300" href="#">Legal</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-body-md text-body-md text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-inverse-primary transition-all duration-300" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-inverse-primary transition-all duration-300" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

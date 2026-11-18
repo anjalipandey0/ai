@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About - Velour &amp; Weave</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;500;600&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#010203",
+                        "secondary-fixed-dim": "#c9c6c0",
+                        "on-background": "#1b1c1c",
+                        "on-secondary-container": "#65645f",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#92836a",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "inverse-surface": "#303030",
+                        "on-primary-fixed-variant": "#444749",
+                        "surface-tint": "#5c5f61",
+                        "tertiary-container": "#251b09",
+                        "on-secondary-fixed-variant": "#474742",
+                        "surface-variant": "#e4e2e1",
+                        "surface-dim": "#dcd9d9",
+                        "primary-fixed-dim": "#c5c7c9",
+                        "inverse-on-surface": "#f3f0f0",
+                        "outline-variant": "#c4c7c9",
+                        "tertiary-fixed": "#f3e0c3",
+                        "primary-fixed": "#e1e2e5",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#f0eded",
+                        "surface": "#fcf9f8",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1b1c1c",
+                        "outline": "#74777a",
+                        "on-primary-fixed": "#191c1e",
+                        "tertiary-fixed-dim": "#d6c4a8",
+                        "on-secondary-fixed": "#1c1c18",
+                        "background": "#fcf9f8",
+                        "inverse-primary": "#c5c7c9",
+                        "secondary-container": "#e5e2db",
+                        "secondary-fixed": "#e5e2db",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#828587",
+                        "surface-bright": "#fcf9f8",
+                        "on-surface-variant": "#444749",
+                        "on-tertiary-fixed-variant": "#524530",
+                        "secondary": "#5f5e59",
+                        "surface-container-high": "#eae7e7",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#040200",
+                        "on-tertiary-fixed": "#241a08",
+                        "primary-container": "#1a1d1f",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "gutter": "32px",
+                        "section-gap": "128px",
+                        "margin-mobile": "20px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Bodoni Moda"],
+                        "display-lg": ["Bodoni Moda"],
+                        "headline-md": ["Bodoni Moda"],
+                        "label-caps": ["Inter"],
+                        "headline-lg": ["Bodoni Moda"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "38px", "fontWeight": "500" }],
+                        "display-lg": ["84px", { "lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Subtle parallax effect for images */
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        /* Minimalist fade-in animation */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-lg antialiased">
+<!-- TopNavBar Component -->
+<header class="w-full top-0 sticky bg-background dark:bg-background z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-8 max-w-container-max mx-auto">
+<!-- Brand Logo -->
+<a class="font-display-lg text-headline-md tracking-tighter text-primary dark:text-primary-fixed-dim" href="#">
+                Velour &amp; Weave
+            </a>
+<!-- Navigation Links (Hidden on Mobile) -->
+<nav class="hidden md:flex gap-8 items-center font-body-md text-body-md uppercase tracking-widest">
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-300 scale-100 active:scale-95 transition-transform" href="#">
+                    Showcase
+                </a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-300 scale-100 active:scale-95 transition-transform" href="#">
+                    Catalog
+                </a>
+<a class="text-primary dark:text-primary-fixed-dim border-b border-primary dark:border-primary-fixed-dim pb-1 scale-100 active:scale-95 transition-transform" href="#">
+                    Heritage
+                </a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-300 scale-100 active:scale-95 transition-transform" href="#">
+                    Portfolio
+                </a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-300 scale-100 active:scale-95 transition-transform" href="#">
+                    Testimonials
+                </a>
+</nav>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-4">
+<button class="hidden md:block bg-primary text-on-primary font-body-md text-body-md px-6 py-3 hover:bg-tertiary-container transition-colors duration-300 rounded-none">
+                    Book Consultation
+                </button>
+<button aria-label="Search" class="text-primary dark:text-primary-fixed-dim">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button aria-label="Menu" class="md:hidden text-primary dark:text-primary-fixed-dim">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Hero Section -->
+<section class="mt-20 md:mt-32 mb-section-gap fade-in-up">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-end">
+<div class="md:col-span-8">
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary mb-6">
+                        Crafted from the earth.<br/>Woven for eternity.
+                    </h1>
+</div>
+<div class="md:col-span-4 pb-4">
+<p class="font-body-lg text-body-lg text-secondary">
+                        Velour &amp; Weave represents the pinnacle of sustainable luxury. We honor the slow, meticulous art of traditional textile creation, bringing heritage techniques into modern, high-end interiors.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Large Immersive Image -->
+<section class="mb-section-gap fade-in-up">
+<div class="w-full h-[614px] md:h-[819px] bg-surface-container-low parallax-bg" data-alt="A sprawling, high-resolution view of a master artisan's weaving loom bathed in soft, natural morning light pouring through large studio windows. The image showcases the intricate tension of natural jute and raw silk threads stretched across wooden beams. The scene is highly textural, emphasizing tactile quality in a sophisticated, minimalist light-mode aesthetic with deep blacks and pristine whites." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDEuiV1QYum3nhZJyzXYJXseO62SMuec7UiFicU1EOZwSy10hgo3dryD7-3gm0HJAyTMMgu_Pn41z2p-Yj37n628zon53g4_R1rcD48BExtuVa6jl0itiRPM8IVsoFdPJSyJyHG1ko6hOm-rSE75qGXPsX2iRUtB9fug-zmC9BA95QeYFsnsc40YvF8Xjmml8lX9kxqRb0qwgGCuUfIWA_YhiohCCg7afNFRghCw8GA1kvvTRKl3WaNPw')">
+</div>
+</section>
+<!-- The Process (Asymmetric Timeline) -->
+<section class="mb-section-gap">
+<div class="mb-16">
+<span class="font-label-caps text-label-caps text-secondary mb-4 block tracking-widest uppercase">The Process</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">From Soil to Silhouette</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-y-24 md:gap-gutter">
+<!-- Step 1 -->
+<div class="md:col-span-5 md:col-start-2 fade-in-up">
+<div class="h-96 bg-surface-container-high mb-8" data-alt="A close-up, high-contrast editorial photograph of raw, organic cotton bolls still attached to the plant, resting in the weathered, calloused hands of a farmer. The lighting is dramatic, highlighting the soft, pure white texture of the cotton against the dark, earthy tones of the soil and hands. The aesthetic is organic luxury and sustainable cultivation." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCUazEnHaX7i_wmx08xP6pJXBKfiXn-IIm73Sb1lzVE8xz1T3Yn18hMPys0aBvhJ0IB09gZBDF-EaMTk5FBXyCcRa_bZUIENTOQV_90nKL5U_beS7k2vBpjBewP2K_PZLJdKOkq5e7n1Ud98NjP2FE5eYlq8GqxIx_Wmpv9xlkVbNu6xndhVLq18i74t0UVRjR1TLdqxzf9eaMJn5VsXCJNat7btRRTSZ9m8MZE8Mozl9GQk3Af2BNu1g'); background-size: cover; background-position: center;">
+</div>
+<span class="font-label-caps text-label-caps text-secondary mb-2 block">01</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Cultivation</h3>
+<p class="font-body-md text-body-md text-secondary">Partnering exclusively with multi-generational organic farms, we source long-staple fibers cultivated without synthetic interventions. Every harvest respects the soil's natural restorative cycle.</p>
+</div>
+<!-- Step 2 -->
+<div class="md:col-span-5 md:col-start-8 mt-0 md:mt-32 fade-in-up">
+<div class="h-96 bg-surface-container-high mb-8" data-alt="A striking black-and-white photograph of vintage wooden spinning wheels in a historic workshop. Motion blur captures the rapid spinning of the thread, creating a sense of dynamic energy within a static, serene space. The lighting emphasizes the raw wooden textures and the delicate tension of the fine yarn being created. High-end editorial style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCKK380IyC9-Cg_ZLl9EwfdW2j3WdcBALEv687uc675wKsuc-To3cfPhFiEXd0IDIjObyrRO5pyr775OH5XeTTNNQpZxXd-OgRi4rctieNxWPxyinWH7DsLQSn3KCB1X0JePqkZDo5AV05mzGtk2lUiq4JFrVUrtOqCqWRHGnU7TCYppPTD8Jaslk0_fuDVtFr3Nz79Tgn7AxYeXQ2o0dHTgS4jhsaaaCB6Aj0U0msrKxyERvlyY5VYbw'); background-size: cover; background-position: center;">
+</div>
+<span class="font-label-caps text-label-caps text-secondary mb-2 block">02</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Spinning</h3>
+<p class="font-body-md text-body-md text-secondary">Raw fibers are hand-spun using heritage techniques that preserve natural variations in thickness, imparting a unique, organic tactile quality to every spool of thread.</p>
+</div>
+</div>
+</section>
+<!-- Artisans Section -->
+<section class="mb-section-gap fade-in-up">
+<div class="border-t border-outline-variant pt-16 grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-4">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary sticky top-32">
+                        Meet the Artisans
+                    </h2>
+<p class="font-body-md text-body-md text-secondary mt-6">
+                        Our studio in Lyon is home to master weavers who have dedicated their lives to the preservation of European textile arts.
+                    </p>
+</div>
+<div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12 md:mt-0">
+<!-- Artisan 1 -->
+<div class="group">
+<div class="w-full h-80 bg-surface-container-low mb-6 overflow-hidden relative" data-alt="A poignant, high-contrast black-and-white portrait of an elderly master artisan in a weaving studio. The artisan is looking directly at the camera with a calm, authoritative expression. Natural light sculpts their features, revealing decades of character and dedication. The background softly blurs complex loom machinery. Premium editorial fashion photography style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDQ-QTBrWtzejz4f8WmvvVqa-rA04d08VmL2mhaagDg216BdJNRnCcpamFgTly07AlswcRJzgupCk_mr0Vlb1q8L1_DwKiZq7C65-CwejB-Ek4ckLWec52-jEtREik4_HG0oq6I7WVOV6So3DpHcH3QbRTL7Vwp1_ImaKOUpiWpLc955Q_9XBbFdb1rLcdY4baqbc8DbotfSGur_JCs7IAEH7vH9OdMALyhGqkFefOyfNE2FDoBhvee8w'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+</div>
+<h4 class="font-headline-md text-headline-md text-primary">Elise Laurent</h4>
+<span class="font-label-caps text-label-caps text-secondary block mt-1">Master Weaver</span>
+</div>
+<!-- Artisan 2 -->
+<div class="group sm:mt-16">
+<div class="w-full h-80 bg-surface-container-low mb-6 overflow-hidden relative" data-alt="A sharp, dramatic black-and-white portrait of a younger artisan intensely focused on inspecting a dyed fabric swatch. The lighting casts strong shadows, emphasizing the texture of the fabric and the artisan's meticulous attention to detail. The setting is a minimalist, modern dye house with architectural concrete elements. High-end lifestyle brand aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBG-wN_j4Esv-rIJJz2hxzUH1XQ5QiChIE8pMVZJ9atqcNWk54qrwjIlvcPuzD17465M7mhAUsuG9VwqK8YfsMQw7iMvaLNn6R8SG4KgI8npaPaHSY7yixj5L0k1OcvA25ZWqhCXLaFg0Faz9DZPdfZd7gY1-9c-DLLueRk7Snsbh6jFQ2_Q1gkFx05mcqfOcOJavBvnviBve6l7Gy12j8bZjTbbrL_w7M61jYF3tr2GKbl3-Tl32wFPQ'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+</div>
+<h4 class="font-headline-md text-headline-md text-primary">Julien Morel</h4>
+<span class="font-label-caps text-label-caps text-secondary block mt-1">Head Dyer</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="w-full mt-section-gap bg-primary dark:bg-primary-container">
+<div class="w-full px-margin-mobile md:px-margin-desktop py-16 flex flex-col items-center gap-8 max-w-container-max mx-auto">
+<div class="font-display-lg text-headline-lg text-on-primary text-center">
+                Velour &amp; Weave
+            </div>
+<div class="flex flex-wrap justify-center gap-6 font-label-caps text-label-caps">
+<a class="text-secondary-fixed-dim dark:text-on-primary-fixed-variant hover:text-on-primary transition-opacity duration-300 opacity-100 hover:opacity-80" href="#">
+                    Privacy Policy
+                </a>
+<a class="text-secondary-fixed-dim dark:text-on-primary-fixed-variant hover:text-on-primary transition-opacity duration-300 opacity-100 hover:opacity-80" href="#">
+                    Terms of Service
+                </a>
+<a class="text-secondary-fixed-dim dark:text-on-primary-fixed-variant hover:text-on-primary transition-opacity duration-300 opacity-100 hover:opacity-80" href="#">
+                    Shipping
+                </a>
+<a class="text-secondary-fixed-dim dark:text-on-primary-fixed-variant hover:text-on-primary transition-opacity duration-300 opacity-100 hover:opacity-80" href="#">
+                    Returns
+                </a>
+<a class="text-secondary-fixed-dim dark:text-on-primary-fixed-variant hover:text-on-primary transition-opacity duration-300 opacity-100 hover:opacity-80" href="#">
+                    Press
+                </a>
+</div>
+<div class="text-secondary-fixed-dim dark:text-on-primary-fixed-variant font-body-md text-sm mt-8">
+                © 2024 Velour &amp; Weave. Crafted with Heritage.
+            </div>
+</div>
+</footer>
+<script>
+        // Simple Intersection Observer for fade-in animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            document.querySelectorAll('.fade-in-up').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body></html>
