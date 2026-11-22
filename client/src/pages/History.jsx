@@ -63,6 +63,8 @@ export default function History() {
       ? projects
       : projects.filter((p) => p.category === activeFilter);
 
+  const featuredProject = filteredProjects.find((p) => p.featured);
+
   return (
     <main className="flex-grow pt-[104px]">
       {/* Header Section */}
@@ -104,21 +106,21 @@ export default function History() {
       {/* Portfolio Grid */}
       <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pb-section-gap">
         {/* Featured Project: Asymmetric Layout */}
-        {filteredProjects.find((p) => p.featured) && (
+        {featuredProject && (
           <div className="mb-section-gap grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
             <div className="md:col-span-7 h-[500px] md:h-[600px] overflow-hidden hover-lift border border-[#D1CECA] relative">
               <img
-                src={filteredProjects.find((p) => p.featured).image}
-                alt={filteredProjects.find((p) => p.featured).title}
+                src={featuredProject.image}
+                alt={featuredProject.title}
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />
             </div>
             <div className="md:col-span-5 md:col-start-8 flex flex-col justify-center mt-8 md:mt-0">
               <p className="font-label-caps text-label-caps text-secondary mb-4 uppercase">
-                {filteredProjects.find((p) => p.featured).category} • {filteredProjects.find((p) => p.featured).year}
+                {featuredProject.category} • {featuredProject.year}
               </p>
               <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-6">
-                {filteredProjects.find((p) => p.featured).title}
+                {featuredProject.title}
               </h2>
               <div className="space-y-6 mb-8 border-t border-outline-variant/30 pt-6">
                 <div>
@@ -126,7 +128,7 @@ export default function History() {
                     Fabric Featured
                   </p>
                   <p className="font-body-md text-body-md text-primary mt-1 font-medium">
-                    {filteredProjects.find((p) => p.featured).fabric}
+                    {featuredProject.fabric}
                   </p>
                 </div>
                 <div>
@@ -134,7 +136,7 @@ export default function History() {
                     Client
                   </p>
                   <p className="font-body-md text-body-md text-primary mt-1">
-                    {filteredProjects.find((p) => p.featured).client}
+                    {featuredProject.client}
                   </p>
                 </div>
                 <div>
@@ -142,12 +144,12 @@ export default function History() {
                     Scope
                   </p>
                   <p className="font-body-md text-body-md text-primary mt-1">
-                    {filteredProjects.find((p) => p.featured).scope}
+                    {featuredProject.scope}
                   </p>
                 </div>
               </div>
               <button
-                onClick={() => setSelectedProject(filteredProjects.find((p) => p.featured))}
+                onClick={() => setSelectedProject(featuredProject)}
                 className="self-start border border-primary text-primary font-label-caps text-label-caps uppercase px-6 py-3 hover:bg-primary hover:text-on-primary transition-colors flex items-center gap-2"
               >
                 View Case Study
