@@ -16,7 +16,13 @@ import AdminDashboard from './pages/AdminDashboard';
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    try {
+      if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
+        window.scrollTo(0, 0);
+      }
+    } catch (e) {
+      // Ignored in non-browser environments
+    }
   }, [pathname]);
   return null;
 }
@@ -39,8 +45,10 @@ function Layout({ children }) {
 }
 
 export default function App() {
+  const base = import.meta.env.BASE_URL || '/';
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={base}>
       <ScrollToTop />
       <Layout>
         <Routes>

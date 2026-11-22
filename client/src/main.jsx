@@ -4,12 +4,14 @@ import App from './App.jsx';
 import ErrorBoundary from './components/ErrorBoundary.jsx';
 import './index.css';
 
+let appMounted = false;
+
 function renderApp() {
+  if (appMounted) return;
   const container = document.getElementById('root');
-  if (!container) {
-    console.error('[Velour & Weave] Root element "#root" not found in DOM.');
-    return;
-  }
+  if (!container) return;
+
+  appMounted = true;
   const root = ReactDOM.createRoot(container);
   root.render(
     <React.StrictMode>
@@ -20,9 +22,11 @@ function renderApp() {
   );
 }
 
-// Ensure DOM is ready before mounting
-if (document.readyState === 'loading') {
+// Immediate mount if element is available, otherwise listen for DOM events
+if (document.getElementById('root')) {
+  renderApp();
+} else if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', renderApp);
 } else {
-  renderApp();
+  window.addEventListener('load', renderApp);
 }
