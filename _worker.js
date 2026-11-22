@@ -1,7 +1,7 @@
-// Cloudflare Workers & Pages Advanced SPA Routing Handler
+// Cloudflare Workers Entry Point for Velour & Weave
 export default {
   async fetch(request, env) {
-    // 1. Attempt to fetch static assets first
+    // 1. Attempt to serve static assets first (HTML, CSS, JS, images, fonts)
     try {
       if (env && env.ASSETS) {
         const assetResponse = await env.ASSETS.fetch(request);
@@ -10,10 +10,10 @@ export default {
         }
       }
     } catch (err) {
-      // Fall through to index fallback
+      // Fall through to SPA routing fallback
     }
 
-    // 2. SPA Fallback: Serve index.html for all client-side navigation routes
+    // 2. SPA Routing Fallback: Return index.html for all client-side navigation routes
     try {
       if (env && env.ASSETS) {
         const indexRequest = new Request(new URL('/', request.url), request);
